@@ -8,7 +8,7 @@ import NavBar from "./Components/NavBar";
 import Edit from "./Pages-Links/Edit";
 import FourOFour from "./Pages-Links/FourOFour";
 import Home from "./Pages-Links/Home";
-import Index from "./Pages/Index";
+import Index from "./Pages-Links/Index";
 import New from "./Pages-Links/New";
 import Show from "./Pages-Links/Show";
 
