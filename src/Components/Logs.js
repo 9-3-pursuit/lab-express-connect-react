@@ -6,7 +6,7 @@ export default function Logs() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    // axios method˝
+    // axios method
     axios
       .get(`${process.env.REACT_APP_API_URL}/logs`)
       .then((res) => {
