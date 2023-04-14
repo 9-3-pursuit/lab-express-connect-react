@@ -2,9 +2,10 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: tan;
 }
 nav {
-  background: #d1a4fa;
+  background: darkkhaki;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,11 +48,6 @@ tbody tr:nth-child(even) {
   background: #f4eafd;
 }
 
-.New {
-  /* border: 1px solid gold;
-  margin: auto;
-  width: 95%; */
-}
 
 .New form {
   margin: auto;
