@@ -1,8 +1,8 @@
-function NewLog() {
+function Index() {
   return (
     <div>
       <h1>hi</h1>
     </div>
   );
 }
-export default NewLog;
+export default Index;

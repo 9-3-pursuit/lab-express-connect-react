@@ -2,16 +2,14 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div>
+    <nav>
       <ul>
-        <Link to="/">
-          <li> All Logs </li>{" "}
-        </Link>
-        <Link to="/NewLog">
-          <li> New Log</li>{" "}
-        </Link>
+        <Link to="/logs">Captain's Log</Link>
+        <button>
+          <Link to="/logs/new">New Log</Link>
+        </button>
       </ul>
-    </div>
+    </nav>
   );
 }
 export default NavBar;
