@@ -4,7 +4,8 @@ import Home from "./Components/Home";
 import Error404 from "./Components/Error404";
 import Logs from "./Components/Logs";
 import LogsIndex from "./Components/LogIndex";
-import Form from "./Components/Form";
+import EditForm from "./Components/Forms/EditForm";
+import NewForm from "./Components/Forms/NewForm";
 
 export default function App() {
   return (
@@ -14,8 +15,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/logs" element={<Logs />} />
         <Route path="/logs/:index" element={<LogsIndex />} />
-        <Route path="/logs/:index/edit" element={<Form type="edit" />} />
-        <Route path="/logs/new" element={<Form type="new" />} />
+        <Route path="/logs/:index/edit" element={<EditForm />} />
+        <Route path="/logs/new" element={<NewForm />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>
