@@ -48,3 +48,77 @@ table {
   width: 50%;
   margin: auto;
 }
+article {
+  color: navy;
+  border: 5px solid red;
+  padding: 10px;
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+
+span {
+  color: black
+}
+article button {
+  background-color: #f7f9fa; 
+  border: 1px solid red;
+  color: navy;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+}
+.showNavigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.showNavigation > div {
+  margin: 0 5px;
+}
+
+.edit-form-container {
+  border: 3px solid red;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 35%;
+}
+
+.edit-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-form-container label {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.edit-form-container input[type="text"],
+.edit-form-container input[type="number"],
+.edit-form-container input[type="checkbox"],
+.edit-form-container textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.edit-form-container textarea {
+  height: 200px;
+}
