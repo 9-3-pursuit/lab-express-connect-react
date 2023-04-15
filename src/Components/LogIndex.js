@@ -1,9 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function LogsIndex() {
   const { index } = useParams();
   const [selectedLog, setSelectedLog] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchLogs = async () => {
       const response = await fetch(`http://localhost:3005/logs/${index}`);
@@ -13,6 +15,18 @@ export default function LogsIndex() {
 
     fetchLogs();
   }, [index]);
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`http://localhost:3005/logs/${index}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log(response);
+    if (response.status === 200) {
+      navigate("/logs");
+    }
+  };
 
   return (
     <main className="min-h-screen pt-16">
@@ -32,6 +46,9 @@ export default function LogsIndex() {
             <Link to={`/logs/${index}/edit`}>
               <button className="border p-2 rounded-md">Edit Log</button>
             </Link>
+            <button className="border p-2 rounded-md" onClick={handleDelete}>
+              Delete
+            </button>
           </div>
         </div>
       </div>
