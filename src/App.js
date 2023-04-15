@@ -1,6 +1,6 @@
 // DEPENDENCIES
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // COMPONENTS
@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar";
 
 // PAGES
 import Home from "./Pages/Home";
+import NewLog from "./Pages/NewLog";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/NewLog" element={<NewLog />} />
         </Routes>
       </BrowserRouter>
     </div>
