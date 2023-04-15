@@ -27,12 +27,14 @@ describe("Delete functionality", () => {
       cy.get("form").submit();
     });
     it("can go to the show page of the created log", () => {
+      cy.wait(500);
       cy.get("a").last().click();
     });
     it("can delete the created log", () => {
       cy.get("button").contains("Delete").click();
-      cy.visit(`${URL}/logs`);
-      cy.get("td").should("not.contain", "Captain Beefheart");
+      //I built a redirect into react using useNavigate. This cy.vist with the useNavigate redirect was creating errors
+      // cy.visit(`${URL}/logs`);
+      cy.get(".Log a").should("not.contain", "Captain Beefheart");
     });
   }
 });
