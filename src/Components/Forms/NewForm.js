@@ -51,6 +51,7 @@ export default function NewForm() {
                 id="captainName"
                 onChange={handleChange}
                 placeholder="Name"
+                value={form.captainName}
               ></input>
               <label htmlFor="title">Title:</label>
               <input
@@ -58,6 +59,7 @@ export default function NewForm() {
                 id="title"
                 placeholder="Your Title"
                 onChange={handleChange}
+                value={form.title}
               ></input>
               <label htmlFor="post">Post:</label>
               <textarea
@@ -65,6 +67,7 @@ export default function NewForm() {
                 placeholder="Your Post"
                 row="30"
                 onChange={handleChange}
+                value={form.post}
               ></textarea>
               <label htmlFor="mistakesWereMadeToday">
                 Mistakes were made today:
@@ -72,6 +75,7 @@ export default function NewForm() {
                   type="checkbox"
                   id="mistakesWereMadeToday"
                   onChange={handleChange}
+                  checked={form.mistakesWereMadeToday}
                 ></input>
               </label>
               <label htmlFor="daysSinceLastCrisis">
@@ -81,6 +85,7 @@ export default function NewForm() {
                 type="number"
                 id="daysSinceLastCrisis"
                 onChange={handleChange}
+                value={form.daysSinceLastCrisis}
                 placeholder="0"
                 min="0"
               ></input>
