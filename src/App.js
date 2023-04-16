@@ -1,8 +1,12 @@
 import NavBar from './commons/NavBar'
-import Home from './components/Home'
+import Home from './pages/Home'
 import Logs from './components/Logs'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Log from './components/Log'
+// import Index from './pages/Index';
 
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EditForm from './pages/EditForm';
 
 function App() {
   return (
@@ -10,7 +14,9 @@ function App() {
       <NavBar/>
       <Routes>
         <Route element={<Home/>} path='/' />
-        <Route element={<Logs/>} path='/logs' />
+        <Route element={<Logs />} path='/logs' />
+        <Route element={<Log />} path='/logs/:index' />
+        <Route element={<EditForm/>} path='/logs/:index/edit'/>
       </Routes>
     </BrowserRouter>
   )

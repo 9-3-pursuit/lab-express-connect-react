@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
+
 
 const Logs = () => {
 
     const [logs, setLogs] = useState([])
     
     useEffect(() => {
-        axios.get('http://localhost:3210/logs')
+        axios.get(`${process.env.REACT_APP_API}/logs`)
         .then(data => setLogs(data.data))
-   })
+   },[])
 
     return (
         <div>
             {logs.map((log, index) => {
               return   <div key={index}>
-                    <h1>Captain Name: {log.captainName}</h1>
-                    <p>Days Since Last Crisis: {log.daysSinceLastCrisis}</p>
-                    <p>Mistakes Were Made Today: {log.mistakesWereMadeToday}</p>
-                    <p>Post: {log.post}</p>
-                    <p>Title: {log.title}</p>
+                  <Link to={`/logs/${index}`}>
+                      <h1>{log.title} - By {log.captainName}</h1>
+                  </Link>
                </div>
             })}
         </div>
