@@ -9,25 +9,12 @@ import NewLog from "./components/NewLog.jsx"
 import LogEdit from "./components/LogEdit.jsx";
 
 function App() {
-  // const [logs, setLogs] = useState([]);
-  // const API = process.env.REACT_APP_API_URL;
-
-  // useEffect(() => {
-  //   axios.get(`${API}/logs`)
-  //   .then((res) => {
-  //       setLogs(res.data);
-  //   })
-  //   .catch((error) => {console.log("catch",error)})
-  // }, [API]);
  
   return (
   <BrowserRouter>
       <Nav/>
     <Routes>
-      {/* <Route path="/" element={<Home/>}/> */}
-      {/* logs={logs} setLogs={setLogs} */}
       <Route path="/logs" element={<Logs />}/> 
-      {/* logs={logs} */}
       <Route path="/logs/:index" element={<LogsIndex />}/>
       <Route path="/logs/new" element={<NewLog />}/> 
       <Route path="/logs/:index/edit" element={<LogEdit />}/> 

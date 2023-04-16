@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams, withRouter, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
-function LogsIndex({}) {
+function LogsIndex() {
     const [log, setLog] = useState([]);
     const API = process.env.REACT_APP_API_URL;
     const { index } = useParams();
@@ -17,12 +17,8 @@ function LogsIndex({}) {
         .catch(() => {
             navigate("/not-found");
         });
-    }, [index, navigate]);
+    }, []);
 
-    // function backButton () {
-    //     navigate("/logs")
-    // }
-// <a href={`/logs/${index}/edit`}>Edit</a>
   return (
     <div>
         <h1>Show</h1>
