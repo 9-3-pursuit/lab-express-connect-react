@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Logs.css"
-import Log from "./Log";
 import axios from "axios";
+import Log from "./Log";
 
 
 function Logs() {
-  const [logs, setLogs] = useState();
+  const [logs, setLogs] = useState([]);
 
 
   useEffect(() => {
@@ -14,6 +14,8 @@ function Logs() {
     });
 
   }, []);
+
+  console.log(logs)
 
     return (
       <>

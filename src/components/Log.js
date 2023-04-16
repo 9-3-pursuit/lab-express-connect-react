@@ -1,22 +1,21 @@
-import { Link } from "react-router-dom";
+//import { a } from "react-router-dom";
 
 function Log({ log, index }) {
   return (
-    <tr>
+   
+    <tr className="Log">
       <td>
-        {Log.isFavorite ? (
-          <span>⭐️</span>
+        {log.mistakesWereMadeToday ? (
+          <span>&#x1F4A5;</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
       </td>
       <td>
-        <a href={Log.url} target="_blank" rel="noreferrer">
-          {Log.name}
-        </a>
-      </td>
+        {log.captainName}
+        </td>
       <td>
-        <Link to={`/logs/${index}`}>✏️</Link>
+        <a href={`/logs/${index}`}>{log.title}</a>
       </td>
     </tr>
   );

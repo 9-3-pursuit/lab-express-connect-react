@@ -1,11 +1,12 @@
+import LogEditForm from "../components/LogEditForm";
 
 function Edit() {
-    return (
-      <>
-   
-      </>
-      
-    )
-  }
-  
-  export default Edit;
+  return (
+    <div className="New Edit">
+      <h2>Edit</h2>
+      <LogEditForm />
+    </div>
+  );
+}
+
+export default Edit;

@@ -1,0 +1,29 @@
+article button {
+    color: pink;
+    border: 3px solid lightgrey;
+    margin: 0 50px;
+    border-radius: 2px;
+    display: block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+article a {
+    text-decoration: none;
+    color: pink;
+}
+
+article button:hover {
+    background-color: #0069d9;
+  }
+  
+
+.showNavigation {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+  
