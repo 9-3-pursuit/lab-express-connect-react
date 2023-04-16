@@ -1,25 +1,22 @@
-// import { Link } from "react-router-dom";import { Link } from "react-router-dom";
-
-// function Log({ log, index }) {
-//   return (
-//     <tr>
-//       <td>
-//         {log.isFavorite ? (
-//           <span>⭐️</span>
-//         ) : (
-//           <span>&nbsp; &nbsp; &nbsp;</span>
-//         )}
-//       </td>
-//       <td>
-//         <a href={log.url} target="_blank" rel="noreferrer">
-//           {log.name}
-//         </a>
-//       </td>
-//       <td>
-//         <Link to={`/logs/${index}`}>✏️</Link>
-//       </td>
-//     </tr>
-//   );
-// }
-
-// export default Log;
+function Log({ log, index }) {
+    return (
+  
+      <tr className="Log">
+        <td>
+          {log.mistakesWereMadeToday ? (
+            <span>&#x1F4A5;</span>
+          ) : (
+            <span>&nbsp; &nbsp; &nbsp;</span>
+          )}
+        </td>
+        <td>
+          {log.captainName}
+          </td>
+        <td>
+          <a href={`/logs/${index}`}>{log.title}</a>
+        </td>
+      </tr>
+    );
+  }
+  
+  export default Log;

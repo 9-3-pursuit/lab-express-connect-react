@@ -1,39 +1,43 @@
+import { useState, useEffect } from "react";
+import "./Logs.css"
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-// import Log from "./Log";
+import Log from "./Log";
 
-export default function Logs() {
-    const [logs, setLogs] = useState([]);
-    const [loaded, setLoaded] = useState(false);
-    
-    useEffect(() => {
-        axios
-        .get("http://localhost:3333/logs")
-        .then((res) => {
-            setLogs(res.data);
-            setLoaded(true); 
-            console.log(res.data)
-        })
-        .catch((err) => console.log(err));
-    }, []);
+
+function Logs() {
+  const [logs, setLogs] = useState([]);
+
+
+  useEffect(() => {
+    axios
+    .get(`${process.env.REACT_APP_API_URL}/logs`)
+    .then((res) => {
+      setLogs(res.data);
+    });
+
+  }, []);
+
+  console.log(logs)
 
     return (
-        <div>
-            
-        </div>
-    );
-  
-}
-    
-//     const removeFromDom = (logId) => {
-//         setLogs(logs.filter((log) => log._id !== logId));
-//     };
-    
-//     return (
-//         <div>
-//         <h1>All Logs</h1>
-//         {loaded && <Log logs={logs} removeFromDom={removeFromDom} />}
-//         </div>
-//     );
-  
+      <>
+      <table>
+  <thead>
+    <tr>
+      <th>Mistakes</th>
+      <th>Captain Name</th>
+      <th>See this log</th>
+    </tr>
+  </thead>
+  <tbody>
+      {logs.map((log, index) => {
+              return <Log key={index} log={log} index={index} />;
+            })}
+  </tbody>
+</table>
+      </>
 
+    )
+  }
+
+  export default Logs;

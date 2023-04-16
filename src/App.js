@@ -1,8 +1,9 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
  //Components
  import NavBar from "./Components/NavBar";
-
+ import Logs from "./Components/Logs";
  //Pages 
   import Home from "./Pages/Home";
   import Edit from "./Pages/Edit";
@@ -10,17 +11,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
   import Index from "./Pages/Index";
   import Show from "./Pages/Show";
   import FourOFour from "./Pages/FourOFour";
-  import Logs from "./Components/Logs";
+ 
 
 function App() {
    return (
-  //  <div>Hello World</div>;
+    <div className="App">
    <Router>
    <NavBar />
    <main>
      <Routes>
        <Route path="/" element={<Home />} />
-       <Route path="/logs" element={<Logs />} />
+       <Route path="/logs" element={<Index />} />
        <Route path="/logs/new" element={<New />} />
        <Route path="/logs/:index" element={<Show />} />
        <Route path="/logs/:index/edit" element={<Edit />} />
@@ -28,7 +29,7 @@ function App() {
      </Routes>
    </main>
  </Router>
-// </div>
+ </div>
 );
 }
 export default App;
