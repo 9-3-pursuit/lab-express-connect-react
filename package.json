@@ -7,15 +7,17 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "dotenv": "^16.0.3",
+    "node": "^19.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-router-dom": "^6.0.2",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
     "test": "cypress open",
     "eject": "react-scripts eject"
   },
