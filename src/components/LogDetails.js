@@ -5,7 +5,7 @@ import axios from "axios";
 
 function LogDetails() {
   const [log, setLog] = useState([]);
-  let { index } = useParams(); //getting index from URL
+    let { index } = useParams();
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -29,11 +29,12 @@ function LogDetails() {
   };
 
   return (
+    <div className="logDeatails">
     <article>
           <h2>{log.title} - By {log.captainName}</h2> 
       <p>{log.post}</p>
       <p><strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}</p>
-
+      </article>
       <div className="showNavigation">
         <div>
           <button>
@@ -53,7 +54,8 @@ function LogDetails() {
           <button onClick={handleDelete}>Delete</button>
         </div>
       </div>
-    </article>
+      </div>
+   
   );
 }
 

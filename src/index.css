@@ -31,3 +31,7 @@ input[type="submit"] {
   justify-content: space-around;
   width: 50%;
 }
+
+a {
+  text-decoration: none;
+}
