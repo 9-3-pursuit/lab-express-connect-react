@@ -46,22 +46,21 @@ function NewLog() {
             id="title"
             />
             <label>Post:</label>
-            <input 
+            <textarea 
             onChange={handleTextChange} 
-            type="text"
             id="post"
             />
             <label>Days Since Last Crisis</label>
             <input 
             onChange={handleTextChange} 
             type="number"
-            id="mistakesWereMadeToday"
+            id="daysSinceLastCrisis"
             />
             <label>Mistakes were made today</label>
             <input 
             onChange={handleCheckboxChange} 
             type="checkbox"
-            id="daysSinceLastCrisis"
+            id="mistakesWereMadeToday"
             />
             <input type="submit"/>
         </form>

@@ -6,6 +6,7 @@ import Nav from "./components/Nav.jsx"
 import Logs from "./components/Logs.jsx"
 import LogsIndex from "./components/LogsIndex.jsx"
 import NewLog from "./components/NewLog.jsx"
+import LogEdit from "./components/LogEdit.jsx";
 
 function App() {
   // const [logs, setLogs] = useState([]);
@@ -29,6 +30,7 @@ function App() {
       {/* logs={logs} */}
       <Route path="/logs/:index" element={<LogsIndex />}/>
       <Route path="/logs/new" element={<NewLog />}/> 
+      <Route path="/logs/:index/edit" element={<LogEdit />}/> 
     </Routes>
   </BrowserRouter>
   )
