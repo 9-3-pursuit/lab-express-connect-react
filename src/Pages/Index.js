@@ -1,7 +1,10 @@
+import Logs from "../Components/Logs";
+
 function Index() {
   return (
     <div>
-      <h1>hi</h1>
+      <h1>Index</h1>
+      <Logs />
     </div>
   );
 }
