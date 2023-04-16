@@ -11,7 +11,12 @@ export default function Log({ log, index }) {
         <li className="list-none font-medium">{log.captainName}</li>
       </div>
       <div className="border-b-2 h-16 w-full flex items-center justify-center">
-        <Link to={`/logs/${index}`} className="list-none font-medium">{log.title}</Link>
+        <Link
+          to={`/logs/${index}`}
+          className="list-none font-medium hover:underline underline-offset-4"
+        >
+          {log.title}
+        </Link>
       </div>
     </div>
   );
