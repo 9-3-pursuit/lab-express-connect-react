@@ -15,15 +15,23 @@ export default function Logs() {
     }, [])
 
     return (
-      <div className="bg-[#EDFAFC] mx-40 rounded-xl">
-        <div className="grid grid-cols-3 justify-items-center">
-          <h2 className="font-bold">Mistakes</h2>
-          <h2 className="font-bold">Captain Name</h2>
-          <h2 className="font-bold">See this log</h2>
+      <div className="bg-[#EDFAFC] mx-40 rounded-xl px-10 py-4">
+        <div className="grid grid-cols-3 gap-x-1 justify-items-center items-center h-16">
+          <div className="border-b-2 h-12 w-full flex justify-center items-center">
+            <h2 className="font-bold">Mistakes</h2>
+          </div>
+          <div className="border-b-2  h-12 w-full flex justify-center items-center">
+            <h2 className="font-bold">Captain Name</h2>
+          </div>
+          <div className="border-b-2  h-12 w-full flex justify-center items-center">
+            <h2 className="font-bold">See this log</h2>
+          </div>
         </div>
-        {logs.map((log, index) => {
-          return <Log key={index} log={log} index={index} />;
-        })}
+        <div >
+          {logs.map((log, index) => {
+            return <Log key={index} log={log} index={index} />;
+          })}
+        </div>
       </div>
     );
 }
