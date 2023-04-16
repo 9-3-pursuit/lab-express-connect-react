@@ -29,6 +29,7 @@ function NewLog() {
         })
         .catch((error) => console.log("catch", error))
     }
+
   return (
     <div>
     <form onSubmit={handleSubmit}>

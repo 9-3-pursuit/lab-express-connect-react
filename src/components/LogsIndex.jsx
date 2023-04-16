@@ -19,6 +19,14 @@ function LogsIndex() {
         });
     }, []);
 
+    function handleDelete () {
+        axios.delete(`${process.env.REACT_APP_API_URL}/logs/${index}`)
+        .then(() => {
+            navigate("/logs")
+        })
+        .catch((error) => console.error(error))
+    }
+
   return (
     <div>
         <h1>Show</h1>
@@ -30,7 +38,7 @@ function LogsIndex() {
         <div>
             <button><Link to="/logs">Back</Link></button>
             <button><Link to={`/logs/${index}/edit`}>Edit</Link></button>
-            <button><Link to="/logs">Delete</Link></button>
+            <button onClick={handleDelete}>Delete</button>
         </div>
     </div>
   )
