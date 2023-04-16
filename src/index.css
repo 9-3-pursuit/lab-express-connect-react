@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .striped div:nth-child(even) {
-    @apply bg-[#FBF4EF]
-  }
-}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
