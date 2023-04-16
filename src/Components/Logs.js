@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-
-import Log from "./Log";
+import { Link } from "react-router-dom";
 
 function Logs() {
   const [logs, setLogs] = useState([]);
@@ -14,23 +13,18 @@ function Logs() {
   }, []);
 
   return (
-    <div className="Logs">
-      <section>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Take me there</th>
-              <th>See this log</th>
-            </tr>
-          </thead>
-          <tbody>
-            {logs.map((log, index) => {
-              return <Log key={index} log={log} index={index} />;
-            })}
-          </tbody>
-        </table>
-      </section>
+    <div>
+      {logs.map((log, index) => {
+        return (
+          <div key={index}>
+            <Link to={`/logs/${index}`}>
+              <h1>
+                {log.title} - By {log.captainName}{" "}
+              </h1>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }
