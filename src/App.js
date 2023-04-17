@@ -28,8 +28,9 @@ function App() {
        <Route path="*" element={<FourOFour />} />
      </Routes>
    </main>
- </Router>
- </div>
-);
+   </Router>
+   </div>
+ );
 }
+
 export default App;

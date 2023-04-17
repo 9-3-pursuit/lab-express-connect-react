@@ -33,6 +33,7 @@ function LogDetails() {
     <article>
           <h2>{log.title} - By {log.captainName}</h2> 
       <p>{log.post}</p>
+      <p><strong>Mistakes were made today:</strong> {log.mistakesWereMadeToday ? "True" : "False"}</p>
       <p><strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}</p>
       </article>
       <div className="showNavigation">

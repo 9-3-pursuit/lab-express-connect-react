@@ -7,7 +7,7 @@ function LogEditForm() {
 
   const [log, setLog] = useState({
     name: "",
-    url: "",
+    title: "",
     Post: "",
     description: "",
     daysSinceLastCrisis: false,
