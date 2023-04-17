@@ -50,7 +50,7 @@ function LogEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="captainName">Captain's Name:</label>
+        <label htmlFor="captainName"><strong>Captain's Name:</strong></label>
         <input
           id="captainName"
           value={log.captainName}
@@ -58,7 +58,7 @@ function LogEditForm() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title"><strong>Title:</strong></label>
         <input
           id="title"
           type="text"
@@ -66,21 +66,21 @@ function LogEditForm() {
           value={log.title}
           onChange={handleTextChange}
         />
-        <label htmlFor="post">Post:</label>
+        <label htmlFor="post"><strong>Post:</strong></label>
         <textarea
           id="post"
           name="post"
           value={log.post}
           onChange={handleTextChange}
         />
-        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis</label>
+        <label htmlFor="daysSinceLastCrisis"><strong>Days since Last Crisis:</strong></label>
         <input
           id="daysSinceLastCrisis"
           type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}
         />
-         <label htmlFor="mistakesWereMadeToday">Mistakes were made today</label>
+         <label htmlFor="mistakesWereMadeToday"><strong>Mistakes were made today:</strong></label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"

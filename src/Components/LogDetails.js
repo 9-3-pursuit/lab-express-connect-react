@@ -31,11 +31,11 @@ function LogDetails() {
   return (
     <div className="LogDetails">
       <article>
-        <h2>Captain Name: {log.captainName}</h2> 
-        <h3>Title: {log.title} - By {log.captainName}</h3>
+        {/* <h2>Captain Name: {log.captainName}</h2>  */}
+        <h2> {log.title} - By {log.captainName}</h2>
         <p><strong>Post:</strong> {log.post}</p>
-        <p><strong>Mistakes Made Today?:</strong> {log.mistakesWereMadeToday ? "True" : "False"}</p>
-        <p><strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}</p>
+        <p><strong>Mistakes Made Today?</strong> {log.mistakesWereMadeToday ? "True" : "False"}</p>
+        <p><strong>Days since Last Crisis:</strong> {log.daysSinceLastCrisis}</p>
       </article>
     <div className="showNavigation">
     <div>
