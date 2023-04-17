@@ -6,4 +6,4 @@ import NewLog from "./Log/NewLog";
 import UpdateLog from "./Log/UpdateLog";
 import Error from "./common/Error/Error";
 
-export { NavBar, Home, LogsIndex, ShowLog, NewLog };
+export { NavBar, Home, LogsIndex, ShowLog, NewLog, UpdateLog, Error };
