@@ -39,3 +39,12 @@ export const deleteLog = async (index) => {
     throw error;
   }
 };
+
+export const updateLog = async (index, updatedLog) => {
+  try {
+    await axios.put(`${API}/logs/${index}`, updatedLog);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
