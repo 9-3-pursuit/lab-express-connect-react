@@ -9,6 +9,7 @@ const EditLog = () => {
         <div className="New Edit">
             <h2>Edit Log</h2>
             <LogEditForm index={index} />
+            <a href="/logs">Back</a>
         </div>
     )
 }
