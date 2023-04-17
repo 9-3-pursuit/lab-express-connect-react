@@ -1,3 +1,3 @@
 import NavBar from "./common/NavBar/NavBar";
-
-export { NavBar };
+import Home from "./Home/Home";
+export { NavBar, Home };
