@@ -23,11 +23,10 @@ const CreateNewLog = () => {
     e.preventDefault();
     axios.post(`${process.env.REACT_APP_API}/logs`, newLog)
         .then(() => {
-            console.log('this works')
             navigate('/logs')
         })
         .catch((error) => {
-            console.log('this does not work stupid',error)
+            console.log(error)
       });
   };
 
