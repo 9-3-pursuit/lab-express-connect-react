@@ -20,14 +20,13 @@ const DeleteLog = () => {
     const handleDelete = () => {
         axios.delete(`${process.env.REACT_APP_API}/logs/${index}`)
             .then(() => {
+                console.log('delete is working')
                 navigate('/logs');
             });
     };
 
     return (
         <div>
-            <h2>Delete Log</h2>
-            <p>Are you sure you want to delete this log?</p>
             <p>{log.title}</p>
             <button onClick={handleDelete}>Delete</button>
         </div>

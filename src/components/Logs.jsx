@@ -28,7 +28,7 @@ const Logs = () => {
                 return <tr key={index}>
                     <td>{log.mistakesWereMade ? true : false}</td>
                     <td>{log.captainName}</td>
-                    <td><Link to='/logs'>{log.title}</Link></td>
+                    <td><Link to={`/logs/${index}`}>{log.title}</Link></td>
                 </tr>
 
              

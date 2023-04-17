@@ -30,15 +30,15 @@ const CreateNewLog = () => {
       });
   };
 
-  const handleDelete = () => {
-    axios.delete(`${process.env.REACT_APP_API}/logs/${index}`)
-      .then(() => {
-        navigate('/logs');
-      })
-      .catch(() => {
-        navigate('/logs');
-      });
-  };
+//   const handleDelete = () => {
+//     axios.delete(`${process.env.REACT_APP_API}/logs/${index}`)
+//       .then(() => {
+//         navigate('/logs');
+//       })
+//       .catch(() => {
+//         navigate('/logs');
+//       });
+//   };
 
   return (
       <div>
@@ -81,7 +81,7 @@ const CreateNewLog = () => {
         </div>
               <br/><br/>
         <button type="submit">Create Log</button>
-        <button type="button" onClick={handleDelete}>Delete Log</button>
+        {/* <button type="button" onClick={handleDelete}>Delete Log</button> */}
       </form>
     </div>
   );

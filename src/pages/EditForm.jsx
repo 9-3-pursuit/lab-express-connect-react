@@ -13,12 +13,22 @@ const EditForm = () => {
         mistakesWereMadeToday: ''
     })
 
-    const handleTextChange = (event) => {
-        const { name, value, type, checked } = event.target;
-        setForm((prevState) => ({
-            ...prevState,
-            [name]: type === "checkbox" ? checked : value
-        }));
+    // const handleTextChange = (event) => {
+    //     const { name, value, type, checked } = event.target;
+    //     setForm((prevState) => ({
+    //         ...prevState,
+    //         [name]: type === "checkbox" ? checked : value
+    //     }));
+    // }
+
+    function handleTextChange(event) {
+        console.log('test')
+        setForm({ ...form, [event.target.id]: event.target.value })
+    }
+
+    function handleCheckboxChange() {
+        console.log('test2')
+        setForm({ ...form, mistakesWereMadeToday: !form.mistakesWereMadeToday})
     }
 
     const handleSubmit = (event) => {
@@ -96,7 +106,7 @@ const EditForm = () => {
                         name="mistakesWereMadeToday"
                         type="checkbox"
                         checked={form.mistakesWereMadeToday}
-                        onChange={handleTextChange}
+                        onChange={handleCheckboxChange}
                     />
                 </label>
                 <br/><br/>
