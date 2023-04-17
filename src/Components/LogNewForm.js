@@ -44,10 +44,8 @@ export default function LogNewForm() {
                     <label className="font-bold text-lg" htmlFor="title">Title:</label>
                     <input className="border border-gray-400 w-11/12 h-10 mx-16 rounded pl-4" id="title" value={log.title} onChange={handleTextChange} type="text" required />
                 </div>
-                <div className="flex flex-col">
-                    <label className="font-bold text-lg" htmlFor="post">Post:</label>
-                    <textarea className="border border-gray-400 w-11/12 h-20 mx-16 rounded pl-4" id="post" value={log.post} onChange={handleTextChange} type="text" placeholder="What happened today?" required/>
-                </div>
+                <label className="font-bold text-lg" htmlFor="post">Post:</label>
+                <textarea className="border border-gray-400 w-11/12 h-20 mx-16 rounded pl-4" id="post" value={log.post} onChange={handleTextChange} type="text" placeholder="What happened today?" />
                 <div className="flex flex-col">
                     <label className="font-bold text-lg" htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
                     <input className="border border-gray-400 w-11/12 h-10 mx-16 rounded pl-4" id="daysSinceLastCrisis" value={log.daysSinceLastCrisis} onChange={handleTextChange} type="number" />
