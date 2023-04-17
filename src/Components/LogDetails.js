@@ -38,7 +38,7 @@ function LogDetails() {
       <div className="showNavigation">
         <div>
           <button>
-            <Link to={`/logs`}>Back</Link>
+            <Link to="/logs">Back</Link>
           </button>
         </div>
         <div>

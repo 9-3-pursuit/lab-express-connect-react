@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function LogEditForm() {
   let { index } = useParams();
@@ -35,17 +36,33 @@ function LogEditForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch
-      .put(`${process.env.REACT_APP_API_URL}/logs/${index}`, log)
-      .then((res) => {
-        setLog(res.data);
-        navigate(`/logs/${index}`);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
+    axios
+      .put(`${process.env.REACT_APP_API_URL}/logs/${index}`, log)
+      .then(() => navigate(`/logs/${index}`));
+    /* Do not delete - Error only while fetch */
+    // fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(log),
+    // })
+    // console.log(log)
+    //   .then((res) => {
+    //     if (!res.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     setLog(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+    // navigate(`/logs/${index}`);
+  };
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
@@ -91,7 +108,7 @@ function LogEditForm() {
         <input type="submit" />
       </form>
       <button>
-        <a href={"/logs"}>Back</a>
+        <Link to="/logs">Back</Link>
       </button>
     </div>
   );
