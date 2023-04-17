@@ -14,13 +14,28 @@ const Logs = () => {
 
     return (
         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Mistakes</th>
+                        <th scope="col">Captain Name</th>
+                        <th scope="col">See this log</th>
+                    </tr>
+                </thead>
+
+                    <tbody>
             {logs.map((log, index) => {
-              return   <div key={index}>
-                  <Link to={`/logs/${index}`}>
-                      <h1>{log.title} - By {log.captainName}</h1>
-                  </Link>
-               </div>
+                return <tr key={index}>
+                    <td>{log.mistakesWereMade ? true : false}</td>
+                    <td>{log.captainName}</td>
+                    <td><Link to='/logs'>{log.title}</Link></td>
+                </tr>
+
+             
             })}
+                </tbody>
+                
+                </table>
         </div>
     )
         
