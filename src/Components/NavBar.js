@@ -4,7 +4,9 @@ function NavBar() {
   return (
     <nav>
       <ul>
-        <Link to="/logs">Captain's Log</Link>
+        <Link to="/logs">
+          <h1>Captain's Log</h1>
+        </Link>
         <button>
           <Link to="/logs/new">New Log</Link>
         </button>

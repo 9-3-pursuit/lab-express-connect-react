@@ -65,14 +65,8 @@ export default LogDetails;
 
 // with axios
 
-// import { useState, useEffect } from "react";
-// import { Link, useParams, useNavigate } from "react-router-dom";
-// import axios from "axios";
 
-// function LogDetails() {
-//   const [log, setLog] = useState([]);
-//   let { index } = useParams();
-//   let navigate = useNavigate();
+// import axios from "axios";
 
 //   useEffect(() => {
 //     axios
@@ -91,35 +85,3 @@ export default LogDetails;
 //       navigate("/logs");
 //     });
 //   };
-
-//   return (
-//     <div>
-//       <article>
-//         <h2>
-//           {log.title} - By {log.captainName}
-//         </h2>
-//         <p>{log.post}</p>
-//         <p>
-//           <strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}
-//         </p>
-//       </article>
-//       <div className="showNavigation">
-//         <div>
-//           <button>
-//             <Link to={`/logs`}>Back</Link>
-//           </button>
-//         </div>
-//         <div>
-//           <button>
-//             <Link to={`/logs/${index}/edit`}>Edit</Link>
-//           </button>
-//         </div>
-//         <div>
-//           <button onClick={handleDelete}>Delete</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default LogDetails;

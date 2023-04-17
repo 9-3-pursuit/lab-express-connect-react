@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-  background: #d1a4fa;
+  background: rgb(12, 35, 59);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +17,10 @@ nav {
 main {
   width: 90%;
   margin: auto;
+}
+
+h1 {
+  color: rgb(225, 210, 208);
 }
 
 a {
