@@ -52,7 +52,8 @@ function LogEditForm() {
           type="text"
           onChange={handleTextChange}
           required
-        />
+        />{" "}
+        <br /> <br />
         <label htmlFor="title">Title</label>
         <input
           id="title"
@@ -60,30 +61,32 @@ function LogEditForm() {
           required
           value={log.title}
           onChange={handleTextChange}
-        />
+        />{" "}
+        <br /> <br />
         <label htmlFor="post">Post:</label>
         <textarea
           id="post"
           name="post"
           value={log.post}
           onChange={handleTextChange}
-        />
+        />{" "}
+        <br /> <br />
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis</label>
         <input
           id="daysSinceLastCrisis"
           type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}
-        />
+        />{" "}
+        <br /> <br />
         <label htmlFor="mistakesWereMadeToday">Mistakes were made today</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={log.mistakesWereMadeToday}
-        />
-        <br />
-
+        />{" "}
+        <br /> <br />
         <input type="submit" />
       </form>
       <button>
