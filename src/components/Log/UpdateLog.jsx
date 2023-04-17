@@ -27,7 +27,7 @@ const UpdateLog = () => {
   const handleTextChange = (event) => {
     setLog({
       ...log,
-      [event.target.name]: event.target.value,
+      [event.target.id]: event.target.value,
     });
   };
 
@@ -47,6 +47,7 @@ const UpdateLog = () => {
 
   return (
     <div className="new">
+      <h1>Edit</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="captainName">Captain's Name:</label>
         <input id="captainName" type="text" value={log.captainName} onChange={handleTextChange} placeholder="Name" />

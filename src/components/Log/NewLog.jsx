@@ -16,7 +16,7 @@ const NewLog = () => {
   const handleTextChange = (event) => {
     setFormLogData({
       ...formLogData,
-      [event.target.name]: event.target.value,
+      [event.target.id]: event.target.value,
     });
   };
 

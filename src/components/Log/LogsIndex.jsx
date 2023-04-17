@@ -37,6 +37,7 @@ const LogsIndex = () => {
         </thead>
         <tbody>
           {logs.map((log, index) => {
+            console.log(`${log.name}`);
             return <Log log={log} index={index} />;
           })}
         </tbody>
