@@ -22,6 +22,6 @@ describe("Index page", () => {
   });
 
   it("Can load index page and has navigation to New page", () => {
-    cy.get("a").contains("New Log").should("have.attr", "href", `/logs/new`);
+    cy.get("a").contains("NEW LOG").should("have.attr", "href", `/logs/new`);
   });
 });

@@ -18,7 +18,7 @@ describe("Edit Page", () => {
   });
 
   it("Has a 'Back' link that has a link back to '/logs'", () => {
-    cy.get('a[href*="/logs"]').contains("Back").contains("Back");
+    cy.get('a[href*="/logs"]').contains("BACK").contains("BACK");
   });
 
   describe("Edit form", () => {

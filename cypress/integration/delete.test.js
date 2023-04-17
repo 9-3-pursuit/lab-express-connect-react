@@ -12,7 +12,7 @@ describe("Delete functionality", () => {
     });
     it("can go to the show page and click a delete button", () => {
       cy.intercept("DELETE", `${API}/logs/2`).as("deleteLog");
-      cy.get("button").contains("Delete").click();
+      cy.get("button").contains("DELETE").click();
       cy.wait("@deleteLog");
     });
   } else {
@@ -30,7 +30,7 @@ describe("Delete functionality", () => {
       cy.get("a").last().click();
     });
     it("can delete the created log", () => {
-      cy.get("button").contains("Delete").click();
+      cy.get("button").contains("DELETE").click();
       cy.visit(`${URL}/logs`);
       cy.get("td").should("not.contain", "Captain Beefheart");
     });
