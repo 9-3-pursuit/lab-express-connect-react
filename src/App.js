@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Logs from './components/Logs'
 import Log from './components/Log'
 import CreateNewLog from './pages/CreateNewLog'
-// import Index from './pages/Index';
+import FourOFour from './pages/FourOFour'
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -18,7 +18,8 @@ function App() {
         <Route element={<Home/>} path='/' />
         <Route element={<Logs />} path='/logs' />
         <Route element={<Log />} path='/logs/:index' />
-        <Route element={<EditForm/>} path='/logs/:index/edit'/>
+        <Route element={<EditForm />} path='/logs/:index/edit' />
+        <Route element={<FourOFour/>} path='/*'/>
       </Routes>
     </BrowserRouter>
   )
