@@ -22,6 +22,15 @@ export const getLog = async (index) => {
   }
 };
 
+export const createLog = async (newLog) => {
+  try {
+    await axios.post(`${API}/logs`, newLog);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export const deleteLog = async (index) => {
   try {
     await axios.delete(`${API}/logs/${index}`);
