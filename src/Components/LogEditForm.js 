@@ -11,6 +11,7 @@ function LogEditForm() {
     description: "",
     daysSinceLastCrisis: false,
   });
+  
   let navigate = useNavigate();
   const handleTextChange = (event) => {
     setLog({ ...log, [event.target.id]: event.target.value });
@@ -36,14 +37,14 @@ function LogEditForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
+    fetch
       .put(`${process.env.REACT_APP_API_URL}/logs/${index}`, log)
       .then((res) => {
-        setLog(res.data);
+        setLog(data);
         navigate(`/logs/${index}`);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -100,5 +101,3 @@ function LogEditForm() {
 }
 
 export default LogEditForm;
-
-  
