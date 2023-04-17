@@ -13,15 +13,28 @@ const LogsIndex = () => {
   }, []);
 
   return (
-    <div>
-      <h1>All Logs</h1>
-      <ul>
-        {logs.map((log) => (
-          <li key={log._id}>
-            <Link to={`/logs/${log._id}`}>{log.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="index">
+      <h1>Index</h1>
+      <table className="table-container">
+        <thead>
+          <tr>
+            <th>Mistakes</th>
+            <th>Captain Name</th>
+            <th>Log</th>
+          </tr>
+        </thead>
+        <tbody>
+          {logs.map((log, index) => (
+            <tr key={index}>
+              <td>{log.mistakesWereMadeToday ? "Yes" : "No"}</td>
+              <td>{log.captainName}</td>
+              <td>
+                <Link to={`/logs/${index}`}>{log.title}</Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
