@@ -36,33 +36,12 @@ function LogEditForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    // refer down after export to fetch instead of axios
     axios
       .put(`${process.env.REACT_APP_API_URL}/logs/${index}`, log)
       .then(() => navigate(`/logs/${index}`));
-    /* Do not delete - Error only while fetch */
-    // fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(log),
-    // })
-    // console.log(log)
-    //   .then((res) => {
-    //     if (!res.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     setLog(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
-    // navigate(`/logs/${index}`);
   };
+
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
@@ -115,3 +94,27 @@ function LogEditForm() {
 }
 
 export default LogEditForm;
+
+/* Do not delete - this is fetch -- above we used axios for a change */
+
+// fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`, {
+//   method: "PUT",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(log),
+// })
+// console.log(log)
+//   .then((res) => {
+//     if (!res.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     return res.json();
+//   })
+//   .then((data) => {
+//     setLog(data);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+// navigate(`/logs/${index}`);

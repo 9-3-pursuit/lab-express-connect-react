@@ -19,9 +19,15 @@ function LogDetails() {
   }, [index, navigate]);
 
   const handleDelete = () => {
-    fetch.delete(`${process.env.REACT_APP_API_URL}/logs/${index}`).then(() => {
-      navigate("/logs");
-    });
+    fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        navigate("/logs");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
