@@ -5,6 +5,8 @@ import LogDetails from "./Components/LogDetails";
 import NavBar from "./Components/NavBar"
 import NewLogForm from "./Components/NewLogForm";
 import EditLogForm from "./Components/EditLogForm";
+import Home from "./Pages/Home";
+import Four0Four from "./Pages/Four0Four"
 
 
 function App() {
@@ -21,13 +23,16 @@ function App() {
     <div>
     <Router>
       <NavBar />
+      <main>
       <Routes>
-        <Route path="/" element={<LogsIndex />} />
+        <Route path="/" element={<Home />} />
         <Route path="/logs" element={<LogsIndex />} />
         <Route path="/logs/:index" element={<LogDetails />} />
         <Route path="/logs/new" element={<NewLogForm />} />
         <Route path="/logs/:index/edit" element={<EditLogForm />} />
+        <Route path="/*" element={<Four0Four />} />
       </Routes>
+      </main>
     </Router>
   </div>
   );

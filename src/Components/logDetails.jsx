@@ -13,8 +13,10 @@ export default function LogDetails() {
         .then((response) => {
           setLog(response.data);
         })
-        .catch((e) => console.log(e));
-    }, [index]);
+        .catch(() => {
+            navigate("/not-found");
+        });
+    }, [index, navigate]);
   
     function handleDelete() {
         axios

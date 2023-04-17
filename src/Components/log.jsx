@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Log({ log, i }) {
+    console.log(log)
   return (
-    <tr>
+    <tr className="log">
     <td>{log.mistakesWereMadeToday ? (
       <span>🎇</span>
     ) : (

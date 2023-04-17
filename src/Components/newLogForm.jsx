@@ -12,7 +12,7 @@ export default function NewLogForm() {
         daysSinceLastCrisis: ""
     })
 
-    const navigate = useNavigate();
+    let navigate = useNavigate();
 
     function handleTextChange(e) {
         setLog({ ...log, [e.target.id]: e.target.value})
@@ -24,14 +24,20 @@ export default function NewLogForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        addLog(log)
-    }
+        axios.post(`${API}/logs`, log)
+         .then(() => {
+             navigate("/logs");
+         })
+         .catch((error) => console.log("catch", error))
+     }
+    //     addLog(log)
+    // }
 
-    function addLog(newLog) {
-        axios.post(`${API}/logs`, log).then(response => {
-            navigate(`/logs`)
-        }).catch(e => console.log(e))
-    }
+    // function addLog(log) {
+    //     axios.post(`${API}/logs`, log).then(() => {
+    //         navigate(`/logs`)
+    //     }).catch(e => console.log(e))
+    
   return (
     <div> 
         <h1>New Log</h1>
@@ -43,14 +49,14 @@ export default function NewLogForm() {
             value={log.captainName} 
             
             onChange={handleTextChange}
-            placeholder="Jack Sparrow"
+            placeholder=""
             required />
 
         <label htmlFor='title'>Title</label>
             <input
                 id="title"
-                value={log.post}
-                text="text"
+                value={log.title}
+                type="text"
                 onChange={handleTextChange}
                 required
                 />
