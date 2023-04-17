@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { getLog, deleteLog } from "../../utils/api";
 
 const ShowLog = () => {
   const [log, setLog] = useState([]);
   const { index } = useParams();
   const navigate = useNavigate();
-
-  const handleGoBack = () => {
-    navigate("/logs");
-  };
-
-  const handleEdit = () => {
-    navigate(`/logs/${index}/edit`);
-  };
 
   const handleDelete = async () => {
     try {
@@ -52,11 +44,11 @@ const ShowLog = () => {
         </p>
       </div>
       <div className="buttons">
-        <button className="back" onClick={handleGoBack}>
-          Back
+        <button className="back">
+          <Link to="/logs">Back</Link>
         </button>
-        <button className="edit" onClick={handleEdit}>
-          Edit
+        <button className="edit">
+          <Link to={`/logs/${index}/edit`}>Edit</Link>
         </button>
         <button className="delete" onClick={handleDelete}>
           Delete
