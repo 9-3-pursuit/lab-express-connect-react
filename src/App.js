@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// import Home from "./components/Home.jsx"
+import Home from "./components/Home.jsx"
 import Nav from "./components/Nav.jsx"
 import Logs from "./components/Logs.jsx"
 import LogsIndex from "./components/LogsIndex.jsx"
@@ -14,6 +12,7 @@ function App() {
   <BrowserRouter>
       <Nav/>
     <Routes>
+      <Route path="/" element={<Home />}/> 
       <Route path="/logs" element={<Logs />}/> 
       <Route path="/logs/:index" element={<LogsIndex />}/>
       <Route path="/logs/new" element={<NewLog />}/> 

@@ -32,8 +32,7 @@ function LogEdit() {
       function handleSubmit(event) {
         event.preventDefault();
         axios.put(`${process.env.REACT_APP_API_URL}/logs/${index}`, editLog)
-        .then((res) => {
-            setEditLog(res.data);
+        .then(() => {
             navigate(`/logs/${index}`);
         })
         .catch((error) => console.warn("catch", error));

@@ -5,12 +5,11 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 
 function LogsIndex() {
     const [log, setLog] = useState([]);
-    const API = process.env.REACT_APP_API_URL;
     const { index } = useParams();
     let navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`${API}/logs/${index}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/logs/${index}`)
         .then((res) => {
             setLog(res.data);
         })
