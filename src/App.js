@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { NavBar, Home, LogsIndex } from "./components";
+import { NavBar, Home, LogsIndex, ShowLog } from "./components";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/logs" element={<LogsIndex />} />
+          <Route path="/logs/:index" element={<ShowLog />} />
         </Routes>
       </Router>
     </div>
