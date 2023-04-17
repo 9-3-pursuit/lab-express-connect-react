@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewLogForm() {
+export default function EditLogForm() {
     const [log, setLog] = useState({
         captainName: "",
         title: "",
@@ -11,6 +12,18 @@ export default function NewLogForm() {
         mistakesWereMadeToday: false,
         daysSinceLastCrisis: ""
     })
+
+    const { index } = useParams();
+
+    useEffect(() => {
+        axios.get(`${API}/logs/${index}`)
+        .then(response => {
+            setLog(response.data)
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }, [index])
 
     const navigate = useNavigate();
 
@@ -22,50 +35,58 @@ export default function NewLogForm() {
         setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        addLog(log)
+    function updateLog() {
+        axios.put(`${API}/logs/${index}`, log)
+        .then(response => {
+            console.log(response.data)
+            setLog(response.data)
+            navigate(`/logs/${index}`)
+        })
+        .catch(e => console.log(e))
     }
 
-    function addLog(newLog) {
-        axios.post(`${API}/logs`, log).then(response => {
-            navigate(`/logs`)
-        }).catch(e => console.log(e))
+    function handleSubmit(e) {
+        e.preventDefault()
+        updateLog()
     }
+
   return (
     <div> 
-        <h1>New Log</h1>
+        <h1>Edit Log</h1>
       <form onSubmit={handleSubmit}>
-      <label htmlFor='captainName'>Captain's Name</label>
+        <label htmlFor='captainName'>Captain's Name</label>
             <input 
             id="captainName" 
-            type="text"
             value={log.captainName} 
-            
+            type="text"
             onChange={handleTextChange}
             placeholder="Jack Sparrow"
             required />
 
         <label htmlFor='title'>Title</label>
-            <input
+            <input 
                 id="title"
-                value={log.post}
-                text="text"
+                value={log.title}
+                type="text"
                 onChange={handleTextChange}
                 required
                 />
 
         <label htmlFor='post'>Post</label>
-            <textarea 
+        <textarea
             id="post"
-            name="post"
             value={log.post}
-
-            // rows="5"
-            // cols="33"
+            onChange={handleTextChange}
+            rows="5"
+            cols="33"
+        ></textarea>
+            {/* <input 
+            id="post"
+            value={log.post}
+            type="text"
             onChange={handleTextChange}
             required
-             ></textarea>
+             /> */}
 
         <label htmlFor='daysSinceLastCrisis'>Days Since Last Crisis</label>
             <input 
@@ -84,6 +105,7 @@ export default function NewLogForm() {
         />
         <br />
         <Link to="/logs"><button>Back</button></Link>
+
         <input type="submit" />
 
       </form>
