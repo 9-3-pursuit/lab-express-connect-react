@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 function LogNewForm() {
   const [log, setLog] = useState({
-    name: "",
-    url: "",
-    Post: "",
-    description: "",
-    daysSinceLastCrisis: false,
+    captainName: "",
+    title: "",
+    post: "",
+    mistakesWereMadeToday: false,
+    daysSinceLastCrisis: "",
   });
 
   const navigate = useNavigate();
@@ -21,9 +21,17 @@ function LogNewForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch
-      .post(`${process.env.REACT_APP_API_URL}/logs`, log)
-      .then(() => {
+
+    fetch(`${process.env.REACT_APP_API_URL}/logs`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(log),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
         navigate("/logs");
       })
       .catch((error) => {

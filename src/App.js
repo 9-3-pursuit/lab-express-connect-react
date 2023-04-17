@@ -6,12 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 
 // PAGES
-import Home from "./pages/Home";
-import Index from "./pages/Index";
-import New from "./pages/New";
-import Show from "./pages/Show";
-import Edit from "./pages/Edit";
-import FourOFour from "./pages/FourOFour";
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
+import New from "./Pages/New";
+import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
 
 function App() {
   return (

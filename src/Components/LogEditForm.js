@@ -5,11 +5,11 @@ function LogEditForm() {
   let { index } = useParams();
 
   const [log, setLog] = useState({
-    name: "",
-    url: "",
-    Post: "",
-    description: "",
-    daysSinceLastCrisis: false,
+    captainName: "",
+    title: "",
+    post: "",
+    mistakesWereMadeToday: false,
+    daysSinceLastCrisis: "",
   });
 
   let navigate = useNavigate();
