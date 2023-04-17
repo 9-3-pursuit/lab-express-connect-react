@@ -1,6 +1,6 @@
 import LogNewForm from "../Components/LogNewForm";
 
-function New() {
+export default function New() {
   return (
     <div className="New">
       <h2>New</h2>
@@ -8,5 +8,3 @@ function New() {
     </div>
   );
 }
-
-export default New;

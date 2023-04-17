@@ -3,7 +3,7 @@ import "./NavBar.css"
 
 function NavBar(){
     return (
-      <div className="navbar">
+      <div className="NavBar">
         <h1><Link to={'/logs'}>Captain's Log</Link></h1>
         <button>
           <Link to={`/logs/new`}>

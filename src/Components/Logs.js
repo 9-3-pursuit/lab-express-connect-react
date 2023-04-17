@@ -36,8 +36,7 @@ function Logs() {
   </tbody>
 </table>
       </>
-
     )
-  }
+  };
 
   export default Logs;

@@ -4,15 +4,16 @@ import axios from "axios";
 
 function LogEditForm() {
   let { index } = useParams();
+  const navigate = useNavigate();
 
   const [log, setLog] = useState({
-    name: "",
+    captainName: "",
     title: "",
-    Post: "",
-    description: "",
-    daysSinceLastCrisis: false,
+    post: "",
+    mistakesWereMadeToday: false,
+    daysSinceLastCrisis: 0,
   });
-  let navigate = useNavigate();
+  
   const handleTextChange = (event) => {
     setLog({ ...log, [event.target.id]: event.target.value });
   };
@@ -91,9 +92,14 @@ function LogEditForm() {
 
         <input type="submit" />
       </form>
-      <button>
-      <a href={'/logs'}>Back</a>
-      </button>
+      <Link to={`/logs`}>
+        <button>Back</button>
+      </Link>
+      <div>
+      <Link to={`/logs/${index}`}>
+        <button>Nevermind!</button>
+      </Link>
+      </div>
     </div>
   );
 }

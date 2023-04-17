@@ -1,6 +1,6 @@
 import Logs from "../Components/Logs";
 
-function Index() {
+export default function Index() {
   return (
     <div className="Index">
       <h2>Index</h2>
@@ -8,5 +8,3 @@ function Index() {
     </div>
   );
 }
-
-export default Index;

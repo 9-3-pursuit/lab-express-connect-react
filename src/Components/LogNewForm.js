@@ -4,14 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 function LogNewForm() {
   const [log, setLog] = useState({
-    name: "",
+    captainName: "",
     title: "",
-    Post: "",
-    description: "",
-    daysSinceLastCrisis: false,
+    post: "",
+    mistakesWereMadeToday: false,
+    daysSinceLastCrisis: "",
   });
 
   const navigate = useNavigate();
+
   const handleTextChange = (event) => {
     setLog({ ...log, [event.target.id]: event.target.value });
   };
@@ -43,7 +44,7 @@ function LogNewForm() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Title:</label>
         <input
           id="title"
           type="text"
@@ -61,6 +62,7 @@ function LogNewForm() {
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis</label>
         <input
           id="daysSinceLastCrisis"
+          name="daysSinceLastCrisis"
           type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}

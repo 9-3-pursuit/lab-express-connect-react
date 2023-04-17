@@ -29,34 +29,30 @@ function LogDetails() {
   };
 
   return (
-    <div className="logDetails">
-    <article>
-          <h2>{log.title} - By {log.captainName}</h2> 
-      <p>{log.post}</p>
-      <p><strong>Mistakes were made today:</strong> {log.mistakesWereMadeToday ? "True" : "False"}</p>
-      <p><strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}</p>
+    <div className="LogDetails">
+      <article>
+        <h2>Captain Name: {log.captainName}</h2> 
+        <h3>Title: {log.title} - By {log.captainName}</h3>
+        <p><strong>Post:</strong> {log.post}</p>
+        <p><strong>Mistakes Made Today?:</strong> {log.mistakesWereMadeToday ? "True" : "False"}</p>
+        <p><strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}</p>
       </article>
-      <div className="showNavigation">
-        <div>
-          <button>
-          <Link to={`/logs`}>
-            Back
-          </Link>
-          </button>
-        </div>
-        <div>
-        <button>
-            <Link to={`/logs/${index}/edit`}>
-            Edit
-          </Link>
-          </button>
-        </div>
-        <div>
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-      </div>
-      </div>
-
+    <div className="showNavigation">
+    <div>
+      <Link to={`/logs`}>
+        <button>Back</button>
+      </Link>
+    </div>
+    <div>
+      <Link to={`/logs/${index}/edit`}>
+        <button>Edit</button>
+      </Link>
+    </div>
+    <div>
+      <button onClick={handleDelete}>Delete</button>
+    </div>
+    </div>
+    </div>
   );
 }
 

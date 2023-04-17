@@ -1,12 +1,10 @@
 import LogDetails from "../Components/LogDetails";
 
-function Show() {
+export default function Show() {
   return (
     <div className="Show">
-      <h2>Show</h2>
+      <h2>Captain's Log</h2>
       <LogDetails />
     </div>
   );
 }
-
-export default Show;
