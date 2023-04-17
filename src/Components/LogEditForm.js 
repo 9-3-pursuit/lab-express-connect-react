@@ -1,0 +1,23 @@
+import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+
+function LogEditForm() {
+  let { index } = useParams();
+
+  const [log, setLog] = useState({
+    name: "",
+    url: "",
+    Post: "",
+    description: "",
+    daysSinceLastCrisis: false,
+  });
+  let navigate = useNavigate();
+  const handleTextChange = (event) => {
+    setLog({ ...log, [event.target.id]: event.target.value });
+  };
+
+  const handleCheckboxChange = () => {
+    setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
+  };
+
+  

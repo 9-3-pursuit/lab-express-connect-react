@@ -8,9 +8,10 @@ function LogDetails() {
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`)
-      .then((response) => {
-        console.log(response);
-        setLog(response.data);
+      .then((res) => res.json())
+      .then((data) => {
+        setLog(data);
+        console.log(data);
       })
       .catch(() => {
         navigate("/not-found");
@@ -24,38 +25,32 @@ function LogDetails() {
   };
 
   return (
-    <article>
-      <h3>
-        {log.isFavorite ? <span>⭐️</span> : null} {log.name}
-      </h3>
-      <h5>
-        <span>
-          <a href={log.url}>{log.name}</a>
-        </span>{" "}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {log.url}
-      </h5>
-      <h6>{log.category}</h6>
-      <p>{log.description}</p>
+    <div>
+      <article>
+        <h2>
+          {log.title} - By {log.captainName}
+        </h2>
+        <p>{log.post}</p>
+        <p>
+          <strong>Days since last crisis:</strong> {log.daysSinceLastCrisis}
+        </p>
+      </article>
       <div className="showNavigation">
         <div>
-          {" "}
-          <Link to={`/logs`}>
-            <button>Back</button>
-          </Link>
+          <button>
+            <Link to={`/logs`}>Back</Link>
+          </button>
         </div>
         <div>
-          {" "}
-          <Link to={`/logs/${index}/edit`}>
-            <button>Edit</button>
-          </Link>
+          <button>
+            <Link to={`/logs/${index}/edit`}>Edit</Link>
+          </button>
         </div>
         <div>
-          {" "}
           <button onClick={handleDelete}>Delete</button>
         </div>
       </div>
-    </article>
+    </div>
   );
 }
 
