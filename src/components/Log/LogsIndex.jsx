@@ -2,6 +2,18 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchLogs } from "../../utils/api";
 
+const Log = ({ log, index }) => {
+  return (
+    <tr key={index} className="Log">
+      <td>{log.mistakesWereMadeToday ? "Yes" : "No"}</td>
+      <td>{log.captainName}</td>
+      <td>
+        <Link to={`/logs/${index}`}>{log.title}</Link>
+      </td>
+    </tr>
+  );
+};
+
 const LogsIndex = () => {
   const [logs, setLogs] = useState([]);
 
@@ -24,15 +36,9 @@ const LogsIndex = () => {
           </tr>
         </thead>
         <tbody>
-          {logs.map((log, index) => (
-            <tr key={index}>
-              <td>{log.mistakesWereMadeToday ? "Yes" : "No"}</td>
-              <td>{log.captainName}</td>
-              <td>
-                <Link to={`/logs/${index}`}>{log.title}</Link>
-              </td>
-            </tr>
-          ))}
+          {logs.map((log, index) => {
+            return <Log log={log} index={index} />;
+          })}
         </tbody>
       </table>
     </div>
