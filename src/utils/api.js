@@ -23,7 +23,6 @@ export const getLog = async (index) => {
 };
 
 export const createLog = async (newLog) => {
-  console.log(newLog);
   try {
     await axios.post(`${API}/logs`, newLog);
   } catch (error) {

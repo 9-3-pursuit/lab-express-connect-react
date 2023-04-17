@@ -4,11 +4,9 @@ const NavBar = () => {
   return (
     <nav>
       <ul>
+        <li>Captain's Log</li>
         <li>
-          <Link to="/logs">Captain's Log</Link>
-        </li>
-        <li>
-          <Link to="/logs/">Back</Link>
+          <Link to="/logs">Back</Link>
         </li>
         <li>
           <Link to="/logs/new">New Log</Link>
