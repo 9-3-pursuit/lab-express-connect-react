@@ -21,7 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/logs" element={<Index />} />
-            <Route path="/logs" element={<New />} />
+            <Route path="/logs/new" element={<New />} />
             <Route path="/logs/:index" element={<Show />} />
             <Route path="/logs/:index/edit" element={<Edit />} />
             <Route path="*" element={<FourOFour />} />
