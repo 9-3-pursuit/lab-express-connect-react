@@ -11,7 +11,7 @@ function LogEditForm() {
     description: "",
     daysSinceLastCrisis: false,
   });
-  
+
   let navigate = useNavigate();
   const handleTextChange = (event) => {
     setLog({ ...log, [event.target.id]: event.target.value });
@@ -21,12 +21,10 @@ function LogEditForm() {
     setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
   };
 
-
   useEffect(() => {
-    
-     fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`)
+    fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`)
       .then((res) => res.json())
-    .then((data) => {
+      .then((data) => {
         setLog(data);
         console.log(data);
       })
@@ -40,7 +38,7 @@ function LogEditForm() {
     fetch
       .put(`${process.env.REACT_APP_API_URL}/logs/${index}`, log)
       .then((res) => {
-        setLog(data);
+        setLog(res.data);
         navigate(`/logs/${index}`);
       })
       .catch((error) => {
@@ -81,7 +79,7 @@ function LogEditForm() {
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}
         />
-         <label htmlFor="mistakesWereMadeToday">Mistakes were made today</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
@@ -90,11 +88,10 @@ function LogEditForm() {
         />
         <br />
 
-
         <input type="submit" />
       </form>
       <button>
-      <a href={'/logs'}>Back</a>
+        <a href={"/logs"}>Back</a>
       </button>
     </div>
   );
