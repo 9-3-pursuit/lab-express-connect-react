@@ -11,6 +11,7 @@ function Log({ log, index }) {
             .then(() => {
                 navigate("/logs");
             })
+        window.location.reload();
     };
 
     return (
@@ -26,11 +27,11 @@ function Log({ log, index }) {
                 <p>{log.captainName}</p>
             </td>
             <td>
-                <a href={`/logs/${index}`} target="_blank" rel="noreferrer">
+                <a href={`/logs/${index}`} rel="noreferrer">
                     {log.title}
                 </a>
+                <button onClick={handleDelete}>Delete</button>
             </td>
-            <button onClick={handleDelete}>Delete</button>
         </tr>
     );
 }

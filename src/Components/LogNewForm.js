@@ -49,7 +49,7 @@ function LogNewForm() {
                     value={log.title}
                     type="text"
                     onChange={handleTextChange}
-                    placeholder="Post Title"
+                    placeholder="Log Title"
                     required
                 />
                 <label htmlFor="post">Post:</label>
@@ -58,7 +58,7 @@ function LogNewForm() {
                     value={log.post}
                     type="text"
                     onChange={handleTextChange}
-                    placeholder="Post Description"
+                    placeholder="Log Description"
                     required
                 />
                 <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
