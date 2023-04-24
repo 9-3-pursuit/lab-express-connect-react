@@ -13,6 +13,8 @@ function Logs() {
             .catch((e) => console.error("catch", e));
     }, []);
 
+
+
     return (
         <div className="Logs">
             <section>

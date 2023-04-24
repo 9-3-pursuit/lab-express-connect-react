@@ -18,9 +18,10 @@ function LogDetails() {
                 navigate("/not-found");
             });
     }, [index, navigate]);
+
     const handleDelete = () => {
         axios
-            .delete(`${process.env.REACT_APP_URL}/logs${index}`)
+            .delete(`${process.env.REACT_APP_URL}/logs/${index}`)
             .then(() => {
                 navigate("/logs");
             })
@@ -28,7 +29,30 @@ function LogDetails() {
 
     return (
         <article>
-
+            <h1>
+                {log.mistakesWereMadeToday ? <span>💥</span> : null} {log.title} - By {log.captainName}
+            </h1>
+            <p>{log.post}</p>
+            <br />
+            <p>Days since last crisis: {log.daysSinceLastCrisis}</p>
+            <div className="showNavigation">
+                <div>
+                    {" "}
+                    <Link to={`/logs`}>
+                        <button>Back</button>
+                    </Link>
+                </div>
+                <div>
+                    {" "}
+                    <Link to={`/logs/${index}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                </div>
+                <div>
+                    {" "}
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
+            </div>
         </article>
     )
 }

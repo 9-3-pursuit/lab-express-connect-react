@@ -3,7 +3,8 @@ import LogDetails from "../Components/LogDetails";
 function Show() {
     return (
         <div className="Show" >
-            <p>This is the show page.</p>
+            <h3>Show</h3>
+            <LogDetails />
         </div>
     )
 }
